@@ -5,7 +5,11 @@ const SPECS = [
   { icon: Cpu, label: "Algorithm", value: "XGBoost Classifier" },
   { icon: Database, label: "Dataset", value: "AI4I2020 Predictive Maintenance Dataset" },
   { icon: Layers, label: "Pipeline", value: "Scikit-Learn Pipeline" },
-  { icon: SlidersHorizontal, label: "Preprocessing", value: "StandardScaler · OneHotEncoder" },
+  {
+    icon: SlidersHorizontal,
+    label: "Preprocessing",
+    value: "StandardScaler · OneHotEncoder · ColumnTransformer · SMOTE",
+  },
   { icon: Boxes, label: "Prediction", value: "Binary Classification (Normal / Failure)" },
   { icon: Server, label: "Serving", value: "final_pipeline.joblib · secure server endpoint" },
 ];
