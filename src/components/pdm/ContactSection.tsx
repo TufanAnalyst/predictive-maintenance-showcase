@@ -24,24 +24,24 @@ const LINKS = [
 
 export function ContactSection() {
   return (
-    <section id="contact" className="panel-surface p-6 sm:p-8">
-      <h2 className="text-2xl font-semibold uppercase tracking-wide">Contact</h2>
-      <p className="mt-1 text-sm text-muted-foreground">
+    <section id="contact" className="panel-surface p-4 sm:p-5">
+      <h2 className="text-base font-semibold uppercase tracking-wide">Contact</h2>
+      <p className="mt-0.5 text-xs text-muted-foreground">
         Built and integrated by Ahmad Munir — Data Science &amp; Machine Learning.
       </p>
 
-      <div className="mt-6 grid gap-4 sm:grid-cols-3">
+      <div className="mt-4 grid gap-3 sm:grid-cols-3">
         {LINKS.map(({ icon: Icon, label, value, href }) => (
           <a
             key={label}
             href={href}
             target={href.startsWith("http") ? "_blank" : undefined}
             rel="noreferrer"
-            className="group rounded-lg border border-border bg-card/50 p-5 transition-colors hover:border-ring hover:bg-card"
+            className="group rounded-md border border-border bg-card/50 p-3 transition-colors hover:border-ring hover:bg-card"
           >
-            <Icon className="size-5 text-primary" aria-hidden />
-            <p className="label-caps mt-3">{label}</p>
-            <p className="mt-1 truncate text-sm font-medium group-hover:text-accent">{value}</p>
+            <Icon className="size-4 text-primary" aria-hidden />
+            <p className="label-caps mt-2">{label}</p>
+            <p className="mt-0.5 truncate text-xs font-medium group-hover:text-accent">{value}</p>
           </a>
         ))}
       </div>
