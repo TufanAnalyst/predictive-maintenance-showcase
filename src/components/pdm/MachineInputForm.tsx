@@ -137,39 +137,39 @@ export function MachineInputForm({
   }
 
   return (
-    <form onSubmit={handleSubmit} className="panel-surface p-6 sm:p-8">
-      <div className="flex flex-wrap items-center justify-between gap-3 border-b border-border pb-5">
+    <form onSubmit={handleSubmit} className="panel-surface p-4 sm:p-5">
+      <div className="flex flex-wrap items-center justify-between gap-2 border-b border-border pb-3">
         <div>
-          <h2 className="text-2xl font-semibold uppercase tracking-wide">Machine Input</h2>
-          <p className="mt-1 text-sm text-muted-foreground">
+          <h2 className="text-base font-semibold uppercase tracking-wide">Machine Input</h2>
+          <p className="mt-0.5 text-xs text-muted-foreground">
             Enter live sensor readings from the production asset.
           </p>
         </div>
         <button
           type="button"
           onClick={fillAll}
-          className="rounded-md border border-border px-3 py-1.5 text-xs font-semibold uppercase tracking-widest text-muted-foreground transition-colors hover:border-ring hover:text-foreground"
+          className="rounded-sm border border-border px-2 py-1 text-[0.65rem] font-semibold uppercase tracking-widest text-muted-foreground transition-colors hover:border-ring hover:text-foreground"
         >
           Load sample reading
         </button>
       </div>
 
-      <div className="mt-6 space-y-6">
+      <div className="mt-4 space-y-4">
         <div>
           <div className="flex items-baseline justify-between gap-3">
             <label htmlFor="machine-type" className="label-caps">
               Machine Type
             </label>
-            <span className="font-mono text-[0.7rem] text-muted-foreground">categorical</span>
+            <span className="font-mono text-[0.65rem] text-muted-foreground">categorical</span>
           </div>
-          <p className="mt-1 text-xs text-muted-foreground">
+          <p className="mt-0.5 text-[0.7rem] text-muted-foreground">
             Product quality variant of the workpiece being machined.
           </p>
           <select
             id="machine-type"
             value={type}
             onChange={(e) => setType(e.target.value as "L" | "M" | "H")}
-            className="field-input focus:field-input-focus mt-2 appearance-none"
+            className="field-input focus:field-input-focus mt-1.5 appearance-none"
           >
             {TYPE_OPTIONS.map((option) => (
               <option key={option.value} value={option.value} className="bg-card">
@@ -179,17 +179,17 @@ export function MachineInputForm({
           </select>
         </div>
 
-        <div className="grid gap-6 sm:grid-cols-2">
+        <div className="grid gap-4 sm:grid-cols-2">
           {FIELDS.map((field) => (
             <div key={field.key}>
               <div className="flex items-baseline justify-between gap-3">
                 <label htmlFor={field.key} className="label-caps">
                   {field.label}
                 </label>
-                <span className="font-mono text-[0.7rem] text-muted-foreground">{field.unit}</span>
+                <span className="font-mono text-[0.65rem] text-muted-foreground">{field.unit}</span>
               </div>
-              <p className="mt-1 text-xs text-muted-foreground">{field.description}</p>
-              <div className="mt-2 flex gap-2">
+              <p className="mt-0.5 text-[0.7rem] text-muted-foreground">{field.description}</p>
+              <div className="mt-1.5 flex gap-1.5">
                 <input
                   id={field.key}
                   type="number"
@@ -210,13 +210,15 @@ export function MachineInputForm({
                     setValues((prev) => ({ ...prev, [field.key]: String(field.example) }));
                     setErrors((prev) => ({ ...prev, [field.key]: undefined }));
                   }}
-                  className="shrink-0 rounded-md border border-border bg-secondary px-3 text-xs font-semibold uppercase tracking-widest text-secondary-foreground transition-colors hover:border-ring hover:bg-muted"
+                  className="shrink-0 rounded-sm border border-border bg-secondary px-2 text-[0.65rem] font-semibold uppercase tracking-widest text-secondary-foreground transition-colors hover:border-ring hover:bg-muted"
                 >
                   Example
                 </button>
               </div>
               {errors[field.key] ? (
-                <p className="mt-1.5 text-xs font-medium text-destructive">{errors[field.key]}</p>
+                <p className="mt-1 text-[0.7rem] font-medium text-destructive">
+                  {errors[field.key]}
+                </p>
               ) : null}
             </div>
           ))}
@@ -226,16 +228,16 @@ export function MachineInputForm({
       <button
         type="submit"
         disabled={loading}
-        className="mt-8 flex w-full items-center justify-center gap-2.5 rounded-lg bg-primary px-6 py-4 font-display text-lg font-semibold uppercase tracking-[0.12em] text-primary-foreground transition-all hover:brightness-110 disabled:cursor-not-allowed disabled:opacity-70"
+        className="mt-5 flex w-full items-center justify-center gap-2 rounded-md bg-primary px-4 py-2.5 font-display text-sm font-semibold uppercase tracking-[0.1em] text-primary-foreground transition-all hover:brightness-110 disabled:cursor-not-allowed disabled:opacity-70"
       >
         {loading ? (
           <>
-            <Loader2 className="size-5 animate-spin" aria-hidden />
+            <Loader2 className="size-4 animate-spin" aria-hidden />
             Analyzing Machine Health...
           </>
         ) : (
           <>
-            <Play className="size-5" aria-hidden />
+            <Play className="size-4" aria-hidden />
             Predict Machine Condition
           </>
         )}

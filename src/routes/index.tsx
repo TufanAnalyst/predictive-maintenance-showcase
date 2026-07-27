@@ -69,60 +69,67 @@ function Index() {
       </div>
 
       <header className="sticky top-0 z-20 border-b border-border bg-background/80 backdrop-blur-xl">
-        <nav className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-4 py-3 sm:px-8">
-          <div className="flex items-center gap-2.5">
-            <span className="grid size-9 place-items-center rounded-md bg-primary">
-              <Cpu className="size-5 text-primary-foreground" aria-hidden />
+        <nav className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-4 py-2 sm:px-6">
+          <div className="flex items-center gap-2">
+            <span className="grid size-7 place-items-center rounded-sm bg-primary">
+              <Cpu className="size-4 text-primary-foreground" aria-hidden />
             </span>
-            <span className="font-display text-sm font-semibold uppercase tracking-[0.18em]">
+            <span className="font-display text-xs font-semibold uppercase tracking-[0.14em]">
               AM<span className="text-muted-foreground">/Industrial AI</span>
             </span>
           </div>
 
-          <p className="hidden font-display text-sm font-semibold uppercase tracking-[0.2em] text-muted-foreground md:block">
+          <p className="hidden font-display text-xs font-semibold uppercase tracking-[0.16em] text-muted-foreground md:block">
             Predictive Maintenance Console
           </p>
 
-          <div className="flex items-center gap-2 rounded-full border border-success/40 bg-success/10 px-3 py-1.5">
-            <span className="size-2 animate-pulse rounded-full bg-success" />
-            <span className="font-display text-xs font-semibold uppercase tracking-widest text-success">
+          <div className="flex items-center gap-2 rounded-full border border-success/40 bg-success/10 px-2.5 py-1">
+            <span className="size-1.5 animate-pulse rounded-full bg-success" />
+            <span className="font-display text-[0.65rem] font-semibold uppercase tracking-widest text-success">
               Model Online
             </span>
           </div>
         </nav>
       </header>
 
-      <main className="mx-auto max-w-7xl px-4 pb-20 pt-10 sm:px-8">
+      <main className="mx-auto max-w-7xl px-4 pb-10 pt-5 sm:px-6">
         <section className="animate-rise">
-          <div className="inline-flex items-center gap-2 rounded-full border border-border bg-card/60 px-3 py-1.5">
-            <Activity className="size-3.5 text-accent" aria-hidden />
-            <span className="font-display text-[0.7rem] font-semibold uppercase tracking-[0.18em] text-muted-foreground">
+          <div className="inline-flex items-center gap-2 rounded-full border border-border bg-card/60 px-2.5 py-1">
+            <Activity className="size-3 text-accent" aria-hidden />
+            <span className="font-display text-[0.62rem] font-semibold uppercase tracking-[0.14em] text-muted-foreground">
               AI Powered · XGBoost Inference Engine
             </span>
           </div>
 
-          <h1 className="mt-5 max-w-4xl text-4xl font-semibold uppercase leading-[1.05] tracking-tight sm:text-6xl">
+          <h1 className="mt-2.5 max-w-3xl text-xl font-semibold uppercase leading-tight tracking-tight sm:text-3xl">
             AI4I2020 Predictive Maintenance System
           </h1>
-          <p className="mt-4 max-w-2xl text-base text-muted-foreground sm:text-lg">
+          <p className="mt-1.5 max-w-2xl text-xs text-muted-foreground sm:text-sm">
             AI-powered machine failure prediction using industrial sensor data.
           </p>
-          <p className="mt-3 font-display text-sm font-semibold uppercase tracking-[0.18em] text-accent">
+          <p className="mt-1.5 font-display text-[0.7rem] font-semibold uppercase tracking-[0.14em] text-accent">
             Built and integrated by Ahmad Munir
           </p>
         </section>
 
-        <div className="mt-10 grid animate-rise gap-6 lg:grid-cols-2">
+        <div className="mt-5 grid animate-rise gap-4 lg:grid-cols-2">
           <MachineInputForm onSubmit={handleSubmit} loading={loading} />
           <PredictionResultPanel result={result} loading={loading} error={error} />
         </div>
 
-        <div className="mt-6 space-y-6">
+        <div className="mt-4 space-y-4">
           <ModelPerformance />
           <AboutModel />
           <ContactSection />
         </div>
       </main>
+
+      <footer className="border-t border-border bg-background/80 py-3 backdrop-blur-xl">
+        <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-1 px-4 text-[0.7rem] text-muted-foreground sm:flex-row sm:px-6">
+          <p>AI4I2020 Predictive Maintenance System</p>
+          <p>Built and integrated by Ahmad Munir</p>
+        </div>
+      </footer>
 
       <footer className="border-t border-border bg-background/80 py-6 backdrop-blur-xl">
         <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-2 px-4 text-xs text-muted-foreground sm:flex-row sm:px-8">
