@@ -130,13 +130,6 @@ function Index() {
           <p>Built and integrated by Ahmad Munir</p>
         </div>
       </footer>
-
-      <footer className="border-t border-border bg-background/80 py-6 backdrop-blur-xl">
-        <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-2 px-4 text-xs text-muted-foreground sm:flex-row sm:px-8">
-          <p>AI4I2020 Predictive Maintenance System</p>
-          <p>Built and integrated by Ahmad Munir</p>
-        </div>
-      </footer>
     </div>
   );
 }
