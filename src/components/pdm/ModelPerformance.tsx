@@ -23,27 +23,20 @@ const EXPLANATIONS = [
 ];
 
 function AccuracyRing() {
-  const radius = 62;
+  const radius = 42;
   const circumference = 2 * Math.PI * radius;
   const offset = circumference * (1 - ACCURACY / 100);
 
   return (
-    <div className="relative grid size-40 place-items-center">
-      <svg viewBox="0 0 160 160" className="size-40 -rotate-90">
+    <div className="relative grid size-28 place-items-center">
+      <svg viewBox="0 0 110 110" className="size-28 -rotate-90">
+        <circle cx="55" cy="55" r={radius} fill="none" strokeWidth="9" className="stroke-secondary" />
         <circle
-          cx="80"
-          cy="80"
+          cx="55"
+          cy="55"
           r={radius}
           fill="none"
-          strokeWidth="12"
-          className="stroke-secondary"
-        />
-        <circle
-          cx="80"
-          cy="80"
-          r={radius}
-          fill="none"
-          strokeWidth="12"
+          strokeWidth="9"
           strokeLinecap="round"
           className="stroke-primary"
           strokeDasharray={circumference}
@@ -51,8 +44,8 @@ function AccuracyRing() {
         />
       </svg>
       <div className="absolute text-center">
-        <p className="font-mono text-3xl font-semibold">{ACCURACY}%</p>
-        <p className="label-caps mt-1">Accuracy</p>
+        <p className="font-mono text-xl font-semibold">{ACCURACY}%</p>
+        <p className="label-caps mt-0.5">Accuracy</p>
       </div>
     </div>
   );
