@@ -64,8 +64,8 @@ function Index() {
           height={1088}
           className="size-full scale-105 object-cover blur-[3px]"
         />
-        <div className="absolute inset-0 bg-background/85" />
-        <div className="absolute inset-0 bg-gradient-to-b from-background/70 via-background/60 to-background" />
+        <div className="absolute inset-0 bg-background/70" />
+        <div className="absolute inset-0 bg-gradient-to-b from-background/50 via-background/70 to-background" />
       </div>
 
       <header className="sticky top-0 z-20 border-b border-border bg-background/80 backdrop-blur-xl">
