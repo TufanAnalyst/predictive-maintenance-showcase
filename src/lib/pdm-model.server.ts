@@ -61,7 +61,8 @@ function scoreTree(tree: Tree, x: number[]): number {
     if (Number.isNaN(value)) {
       node = tree.m[node];
     } else {
-      node = value < tree.t[node] ? tree.y[node] : tree.n[node];
+      // Thresholds are float32 inside XGBoost; compare at the same precision.
+      node = value < Math.fround(tree.t[node]) ? tree.y[node] : tree.n[node];
     }
   }
   return tree.v[node];
@@ -73,8 +74,9 @@ export function predictMachineCondition(input: PredictionInput): PredictionOutpu
   // base_score = 0.5 -> logit(0.5) = 0
   let margin = 0;
   for (const tree of model.trees as Tree[]) {
-    margin = Math.fround(margin + scoreTree(tree, x));
+    margin += scoreTree(tree, x);
   }
+
 
   const probability = 1 / (1 + Math.exp(-margin));
 
