@@ -53,49 +53,51 @@ function AccuracyRing() {
 
 export function ModelPerformance() {
   return (
-    <section id="performance" className="panel-surface p-6 sm:p-8">
-      <h2 className="text-2xl font-semibold uppercase tracking-wide">Model Performance</h2>
-      <p className="mt-1 text-sm text-muted-foreground">
+    <section id="performance" className="panel-surface p-4 sm:p-5">
+      <h2 className="text-base font-semibold uppercase tracking-wide">Model Performance</h2>
+      <p className="mt-0.5 text-xs text-muted-foreground">
         Evaluated on the held-out AI4I2020 test split (2,000 machine records).
       </p>
 
-      <div className="mt-8 grid gap-8 lg:grid-cols-[auto_1fr]">
+      <div className="mt-4 grid gap-5 lg:grid-cols-[auto_1fr]">
         <div className="flex justify-center lg:justify-start">
           <AccuracyRing />
         </div>
 
         <div>
-          <div className="overflow-hidden rounded-lg border border-border">
-            <table className="w-full text-sm">
+          <div className="overflow-hidden rounded-md border border-border">
+            <table className="w-full text-xs">
               <thead>
                 <tr className="bg-secondary/70">
-                  <th className="label-caps p-3 text-left"></th>
-                  <th className="label-caps p-3 text-left">Predicted Normal</th>
-                  <th className="label-caps p-3 text-left">Predicted Failure</th>
+                  <th className="label-caps p-2 text-left"></th>
+                  <th className="label-caps p-2 text-left">Predicted Normal</th>
+                  <th className="label-caps p-2 text-left">Predicted Failure</th>
                 </tr>
               </thead>
               <tbody className="font-mono">
                 <tr className="border-t border-border">
-                  <th className="label-caps p-3 text-left">Actual Normal</th>
-                  <td className="p-3 text-success">{MATRIX[0].value}</td>
-                  <td className="p-3 text-warning">{MATRIX[1].value}</td>
+                  <th className="label-caps p-2 text-left">Actual Normal</th>
+                  <td className="p-2 text-success">{MATRIX[0].value}</td>
+                  <td className="p-2 text-warning">{MATRIX[1].value}</td>
                 </tr>
                 <tr className="border-t border-border">
-                  <th className="label-caps p-3 text-left">Actual Failure</th>
-                  <td className="p-3 text-destructive">{MATRIX[2].value}</td>
-                  <td className="p-3 text-success">{MATRIX[3].value}</td>
+                  <th className="label-caps p-2 text-left">Actual Failure</th>
+                  <td className="p-2 text-destructive">{MATRIX[2].value}</td>
+                  <td className="p-2 text-success">{MATRIX[3].value}</td>
                 </tr>
               </tbody>
             </table>
           </div>
 
-          <dl className="mt-5 grid gap-4 sm:grid-cols-2">
+          <dl className="mt-3 grid gap-2.5 sm:grid-cols-2">
             {EXPLANATIONS.map((item) => (
-              <div key={item.title} className="rounded-lg border border-border bg-card/50 p-4">
-                <dt className="font-display text-sm font-semibold uppercase tracking-wider">
+              <div key={item.title} className="rounded-md border border-border bg-card/50 p-3">
+                <dt className="font-display text-xs font-semibold uppercase tracking-wider">
                   {item.title}
                 </dt>
-                <dd className="mt-1 text-xs leading-relaxed text-muted-foreground">{item.text}</dd>
+                <dd className="mt-0.5 text-[0.7rem] leading-relaxed text-muted-foreground">
+                  {item.text}
+                </dd>
               </div>
             ))}
           </dl>
