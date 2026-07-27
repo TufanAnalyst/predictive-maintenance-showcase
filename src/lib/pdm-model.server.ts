@@ -42,7 +42,8 @@ function buildFeatureVector(input: PredictionInput): number[] {
   const features: number[] = [];
 
   NUMERIC_ORDER.forEach((key, i) => {
-    features.push((input[key] - model.mean[i]) / model.scale[i]);
+    // XGBoost evaluates split conditions in float32; match that precision exactly.
+    features.push(Math.fround((input[key] - model.mean[i]) / model.scale[i]));
   });
 
   // One-hot block, categories are alphabetical: ["H", "L", "M"]
@@ -72,7 +73,7 @@ export function predictMachineCondition(input: PredictionInput): PredictionOutpu
   // base_score = 0.5 -> logit(0.5) = 0
   let margin = 0;
   for (const tree of model.trees as Tree[]) {
-    margin += scoreTree(tree, x);
+    margin = Math.fround(margin + scoreTree(tree, x));
   }
 
   const probability = 1 / (1 + Math.exp(-margin));
