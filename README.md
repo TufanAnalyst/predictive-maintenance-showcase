@@ -1,32 +1,144 @@
-# Predictive Maintenance Insights
+# 🏭 Predictive Maintenance Insights
 
-Also mention at the top 
-that Build and integrated by Ahmad Munir
+> **Built and Integrated by Ahmad Munir**
 
-and also in contact section at the end of this page mention my linkedin and github repo let me paste my repo and linkedin address also mention my email :
-so email : ahmad.munir.data@gmail.com
-Linkedin www.linkedin.com/in/ahmad-munir-437430376
-github repo : https://github.com/TufanAnalyst/Predictive-maintenance||
+A modern, interactive web application for predicting industrial machine failures before they occur using Machine Learning.
 
-show me your magic i wanna see do you perform better from other AI tools so i can use you for my fture work i am counting on you
+This project provides an intuitive interface that allows users to enter machine operating conditions and instantly receive maintenance predictions powered by a trained machine learning model.
 
-This project was built with [Lovable](https://lovable.dev).
+---
 
-## Build with Lovable
+## 🚀 Project Overview
 
-Continue developing this project in the [Lovable editor](https://lovable.dev/projects/a9b390a0-d62d-49e7-9843-d2247711f8d4).
+Predictive Maintenance Insights is a web-based application developed to demonstrate how Machine Learning can help industries minimize unexpected equipment failures.
 
-- **Ship faster**: describe what you want to build and Lovable handles the code.
-- **Stay in sync**: every change made in Lovable is committed straight to this repository.
-- **Full ownership**: this code is yours. Push to `main` on GitHub and your changes sync back into Lovable, ready for your next prompt.
+The application is powered by an XGBoost model trained on the **AI4I 2020 Predictive Maintenance Dataset**, allowing users to predict potential machine failures based on real manufacturing sensor measurements.
 
-## Development
+The frontend was designed and integrated using **Lovable**, providing a clean and responsive user experience.
 
-Prefer working locally? You need Node.js and npm — [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating).
+---
 
-```sh
-git clone <this-repository-url>
-cd <repository-name>
-npm i
+## 🎯 Objective
+
+The objective of this project is to predict machine failures before they occur, enabling industries to:
+
+- Reduce unexpected downtime
+- Lower maintenance costs
+- Increase equipment reliability
+- Improve operational efficiency
+- Support proactive maintenance strategies
+
+---
+
+## ⚙️ Features
+
+- Modern and responsive user interface
+- Machine failure prediction
+- Failure probability estimation
+- Industrial machine input form
+- Clean visualization of prediction results
+- Production-ready frontend design
+
+---
+
+## 🧠 Machine Learning Model
+
+The prediction engine is based on an **XGBoost Classifier** trained on the AI4I 2020 Predictive Maintenance Dataset.
+
+The model utilizes features including:
+
+- Machine Type
+- Air Temperature
+- Process Temperature
+- Rotational Speed (RPM)
+- Torque
+- Tool Wear
+
+to estimate whether a machine is likely to fail.
+
+---
+
+## 🛠 Technologies Used
+
+### Frontend
+
+- Lovable
+- React
+- TypeScript
+- HTML5
+- CSS3
+
+### Machine Learning
+
+- Python
+- Pandas
+- Scikit-learn
+- XGBoost
+- Joblib
+
+---
+
+## 📌 Related Repository
+
+The complete Machine Learning pipeline, model development, preprocessing, feature engineering, evaluation, and training notebooks are available here:
+
+**Predictive Maintenance Model Repository**
+
+https://github.com/TufanAnalyst/Predictive-maintenance
+
+---
+
+## ▶️ Run Locally
+
+Clone the repository
+
+```bash
+git clone <repository-url>
+```
+
+Install dependencies
+
+```bash
+npm install
+```
+
+Start the development server
+
+```bash
 npm run dev
 ```
+
+---
+
+## 🌍 Future Improvements
+
+- Live API integration
+- Cloud deployment
+- Model monitoring
+- Explainable AI (SHAP)
+- Real-time sensor streaming
+- Industrial dashboard
+
+---
+
+# 👨‍💻 Author
+
+**Ahmad Munir**
+
+Machine Learning & Data Analytics Enthusiast
+
+---
+
+## 📫 Contact
+
+📧 Email
+ahmad.munir.data@gmail.com
+
+🔗 LinkedIn
+https://www.linkedin.com/in/ahmad-munir-437430376
+
+💻 GitHub
+https://github.com/TufanAnalyst
+
+Machine Learning Repository
+https://github.com/TufanAnalyst/Predictive-maintenance
